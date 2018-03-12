@@ -15,6 +15,7 @@
 		AC01D763205653B900FFFEA9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AC01D761205653B900FFFEA9 /* LaunchScreen.storyboard */; };
 		AC01D76E205653B900FFFEA9 /* AssignmentTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC01D76D205653B900FFFEA9 /* AssignmentTests.swift */; };
 		AC01D779205653B900FFFEA9 /* AssignmentUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC01D778205653B900FFFEA9 /* AssignmentUITests.swift */; };
+		AC01D787205695D700FFFEA9 /* PlayMusic.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC01D786205695D700FFFEA9 /* PlayMusic.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +50,7 @@
 		AC01D774205653B900FFFEA9 /* AssignmentUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AssignmentUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		AC01D778205653B900FFFEA9 /* AssignmentUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssignmentUITests.swift; sourceTree = "<group>"; };
 		AC01D77A205653B900FFFEA9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		AC01D786205695D700FFFEA9 /* PlayMusic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayMusic.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,6 +103,7 @@
 			children = (
 				AC01D755205653B900FFFEA9 /* AppDelegate.swift */,
 				AC01D757205653B900FFFEA9 /* ViewController.swift */,
+				AC01D786205695D700FFFEA9 /* PlayMusic.swift */,
 				AC01D759205653B900FFFEA9 /* Main.storyboard */,
 				AC01D75F205653B900FFFEA9 /* Assets.xcassets */,
 				AC01D761205653B900FFFEA9 /* LaunchScreen.storyboard */,
@@ -263,6 +266,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				AC01D75E205653B900FFFEA9 /* Assignment.xcdatamodeld in Sources */,
+				AC01D787205695D700FFFEA9 /* PlayMusic.swift in Sources */,
 				AC01D758205653B900FFFEA9 /* ViewController.swift in Sources */,
 				AC01D756205653B900FFFEA9 /* AppDelegate.swift in Sources */,
 			);
