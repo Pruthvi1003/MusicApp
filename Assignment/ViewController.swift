@@ -8,6 +8,8 @@
 
 import UIKit
 import MediaPlayer
+import AVFoundation
+
 
 struct searchItem{
     var name : String!
@@ -18,16 +20,22 @@ class ViewController: UIViewController,UITableViewDelegate,UITableViewDataSource
     
     @IBOutlet weak var musicLibTable: UITableView!
      var musicPlayerItems = [MPMediaItem]()
+     let anotherPlayer = AVPlayer()
     
      var searchResultArray = [searchItem]()
      var songtitleArray = [String]()
      var isSearchResult = false
+    
+    var urlArray = [URL]()
+    var anAvPlayerItemArray = [AVPlayerItem]()
    
     @IBOutlet weak var searchBar: UISearchBar!
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         checkForLibraryAuth()
+        //createAVQueuePlayer()
+       
     
     }
     
@@ -39,11 +47,13 @@ class ViewController: UIViewController,UITableViewDelegate,UITableViewDataSource
         switch  status {
         case .authorized:
            loadAMusicLib()
+           //createAVQueuePlayer()
         case .notDetermined:
             MPMediaLibrary.requestAuthorization() { status in
                 if status == .authorized {
                     DispatchQueue.main.async {
                         self.loadAMusicLib()
+                        //self.createAVQueuePlayer()
                     }
                 }
             }
@@ -67,6 +77,21 @@ class ViewController: UIViewController,UITableViewDelegate,UITableViewDataSource
         musicLibTable.reloadData()
         
     }
+    
+    /*func createAVQueuePlayer() {
+        
+        for anItem in musicPlayerItems {
+            urlArray.append(anItem.assetURL!)
+            
+        }
+        for anItem in urlArray{
+            
+            anAvPlayerItemArray.append(AVPlayerItem(url: anItem))
+        }
+        
+        let anAVPlayerQueue = AVQueuePlayer(items: anAvPlayerItemArray)
+        
+    }*/
     
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
         
@@ -167,6 +192,8 @@ class ViewController: UIViewController,UITableViewDelegate,UITableViewDataSource
         }else {
             let songSelected = musicPlayerItems.remove(at: indexPath.row)
             musicPlayerItems.insert(songSelected, at: 0)
+            let songName = songtitleArray.remove(at: indexPath.row)
+            songtitleArray.insert(songName, at: 0)
         }
         performSegue(withIdentifier: "pushToPlay", sender: self)
         //self.navigationController?.pushViewController(moveToPlayView, animated: true)
@@ -181,6 +208,7 @@ class ViewController: UIViewController,UITableViewDelegate,UITableViewDataSource
             
             let moveToPlayView = segue.destination as! PlayMusic
             moveToPlayView.mediaItems = musicPlayerItems
+            moveToPlayView.songName = songtitleArray
             
             
         }

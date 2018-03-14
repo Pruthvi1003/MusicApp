@@ -16,6 +16,7 @@
 		AC01D76E205653B900FFFEA9 /* AssignmentTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC01D76D205653B900FFFEA9 /* AssignmentTests.swift */; };
 		AC01D779205653B900FFFEA9 /* AssignmentUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC01D778205653B900FFFEA9 /* AssignmentUITests.swift */; };
 		AC01D787205695D700FFFEA9 /* PlayMusic.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC01D786205695D700FFFEA9 /* PlayMusic.swift */; };
+		AC9330912058E791008C4D0C /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AC9330902058E791008C4D0C /* AudioToolbox.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +52,8 @@
 		AC01D778205653B900FFFEA9 /* AssignmentUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssignmentUITests.swift; sourceTree = "<group>"; };
 		AC01D77A205653B900FFFEA9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		AC01D786205695D700FFFEA9 /* PlayMusic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayMusic.swift; sourceTree = "<group>"; };
+		AC93308E2058E791008C4D0C /* Assignment.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Assignment.entitlements; sourceTree = "<group>"; };
+		AC9330902058E791008C4D0C /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +61,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AC9330912058E791008C4D0C /* AudioToolbox.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -85,6 +89,7 @@
 				AC01D76C205653B900FFFEA9 /* AssignmentTests */,
 				AC01D777205653B900FFFEA9 /* AssignmentUITests */,
 				AC01D753205653B900FFFEA9 /* Products */,
+				AC93308F2058E791008C4D0C /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -101,6 +106,7 @@
 		AC01D754205653B900FFFEA9 /* Assignment */ = {
 			isa = PBXGroup;
 			children = (
+				AC93308E2058E791008C4D0C /* Assignment.entitlements */,
 				AC01D755205653B900FFFEA9 /* AppDelegate.swift */,
 				AC01D757205653B900FFFEA9 /* ViewController.swift */,
 				AC01D786205695D700FFFEA9 /* PlayMusic.swift */,
@@ -129,6 +135,14 @@
 				AC01D77A205653B900FFFEA9 /* Info.plist */,
 			);
 			path = AssignmentUITests;
+			sourceTree = "<group>";
+		};
+		AC93308F2058E791008C4D0C /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				AC9330902058E791008C4D0C /* AudioToolbox.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -200,6 +214,14 @@
 					AC01D751205653B900FFFEA9 = {
 						CreatedOnToolsVersion = 9.0;
 						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.BackgroundModes = {
+								enabled = 1;
+							};
+							com.apple.InterAppAudio = {
+								enabled = 1;
+							};
+						};
 					};
 					AC01D768205653B900FFFEA9 = {
 						CreatedOnToolsVersion = 9.0;
@@ -434,6 +456,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = Assignment/Assignment.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = DZ389ZT9YE;
 				INFOPLIST_FILE = Assignment/Info.plist;
@@ -449,6 +472,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = Assignment/Assignment.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = DZ389ZT9YE;
 				INFOPLIST_FILE = Assignment/Info.plist;
